@@ -6,6 +6,7 @@ TenFour is Copyright (c) 2011 by Daniel Swain, dan.t.swain at gmail.com
 TenFour is a simple site status monitor using cron and written in Ruby.  TenFour is not meant to be a replacement for full-fledged uptime monitoring sites.  I use it just to make sure the sites I'm responsible for are there and OK.
 
 __Note__
+
 > I haven't had a chance to test this, but TenFour may not work with Ruby 1.9.x because it uses the Ping built-in, which was discontinued.  If you can confirm this, let me know!
 
 Setup
