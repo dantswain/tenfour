@@ -5,7 +5,8 @@ TenFour is Copyright (c) 2011 by Daniel Swain, dan.t.swain at gmail.com
 
 TenFour is a simple site status monitor using cron and written in Ruby.  TenFour is not meant to be a replacement for full-fledged uptime monitoring sites.  I use it just to make sure the sites I'm responsible for are there and OK.
 
-*Note* I haven't had a chance to test this, but TenFour may not work with Ruby 1.9.x because it uses the Ping built-in, which was discontinued.  If you can confirm this, let me know!
+__Note__
+> I haven't had a chance to test this, but TenFour may not work with Ruby 1.9.x because it uses the Ping built-in, which was discontinued.  If you can confirm this, let me know!
 
 Setup
 ---
@@ -14,9 +15,9 @@ Setup
 2. In the TenFour directory, run `bundle install`.
 3. Edit the configuration file `config/config.yml`.  It should look something like this:
 
-    :sites:
-      MySite: http://mysite.com/
-      ClientSite: http://www.myclient.com
+        :sites:
+          MySite: http://mysite.com/
+          ClientSite: http://www.myclient.com
 
 4. Install the cron job using `./tenfour.rb install`.  You may need to `chmod +x tenfour.rb`
 
