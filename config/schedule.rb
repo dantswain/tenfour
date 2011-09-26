@@ -19,10 +19,8 @@
 
 # Learn more: http://github.com/javan/whenever
 
-ten4_dir = File.dirname(File.expand_path(__FILE__)) + "/../"
-
-set :output, ten4_dir + "status.txt"
+ten4_dir = File.expand_path(File.dirname(File.expand_path(__FILE__)) + "/../")
 
 every 1.hour do
-  command ten4_dir + "tenfour.rb"
+  command ten4_dir + "/tenfour.rb"
 end
