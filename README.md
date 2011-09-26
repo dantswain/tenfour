@@ -14,9 +14,9 @@ Setup
 2. In the TenFour directory, run `bundle install`.
 3. Edit the configuration file `config/config.yml`.  It should look something like this:
 
-    :sites:
-      MySite: http://mysite.com/
-      ClientSite: http://www.myclient.com
+        :sites:
+          MySite: http://mysite.com/
+          ClientSite: http://www.myclient.com
 
 4. Install the cron job using `./tenfour.rb install`.  You may need to `chmod +x tenfour.rb`
 
