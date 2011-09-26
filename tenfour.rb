@@ -14,10 +14,18 @@ class TenFour
 
   def initialize
     load_config
-    init_output
   end
 
+  def install_cronjob
+    %x[bundle exec whenever --update-cron]
+  end
+  
+  def uninstall_cronjob
+    %x[bundle exec whenever --clear-crontab]
+  end
+  
   def check_sites
+    init_output    
     unless internet_connection?
       error_out "No internet connection"
       return
@@ -27,6 +35,7 @@ class TenFour
         ok_out "Site at #{url} appears to be running fine"
       end
     end
+    done
   end
 
   def check_server site
@@ -158,14 +167,16 @@ class TenFour
 end
 
 ten4 = TenFour.new
-ten4.check_sites
-ten4.done
   
-# if ARGV[0] && ARGV[0].match(/^install/i)
-#   puts "Updating cron"
-#   %x[bundle exec whenever --update-cron]
-#   exit
-# end
+if ARGV[0] && ARGV[0].match(/^install/i)
+  puts "Updating cron"
+  ten4.install_cronjob
+elsif ARGV[0] && ARGV[0].match(/^uninstall/i)
+  puts "Removing cron jobs"
+  ten4.uninstall_cronjob
+else
+  ten4.check_sites
+end
 
 exit
 
