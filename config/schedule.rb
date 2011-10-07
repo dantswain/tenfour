@@ -21,6 +21,8 @@
 
 ten4_dir = File.expand_path(File.dirname(File.expand_path(__FILE__)) + "/../")
 
+set :output, ten4_dir + '/error.log'
+
 every 1.hour do
   command ten4_dir + "/tenfour.rb"
 end
